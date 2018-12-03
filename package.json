@@ -1,0 +1,26 @@
+{
+  "name": "finControl2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zathershtein/finControl2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zathershtein/finControl2/issues"
+  },
+  "homepage": "https://github.com/zathershtein/finControl2#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
