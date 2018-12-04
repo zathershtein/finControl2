@@ -1,7 +1,15 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
-body {
-    font: 100% $font-stack;
-    color: $primary-color;
-}
+// @import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/forms";
+
+
+// $font-stack: Helvetica, sans-serif;
+// $primary-color: #333;
+
+// body {
+//     font: 100% $font-stack;
+//     color: $primary-color;
+// }

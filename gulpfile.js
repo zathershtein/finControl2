@@ -1,5 +1,5 @@
 var gulp = require("gulp");
-var browserSync = require("browser-sync");
+var browserSync = require("browser-sync").create();
 var rimraf = require("rimraf");
 var sass = require("gulp-sass");
 var imagemin = require("gulp-imagemin");
@@ -8,8 +8,7 @@ var uglify = require("gulp-uglify");
 var removeComments = require('gulp-strip-css-comments');
 var watch = require("gulp-watch");
 
-/* Paths to source/build/watch files
-=========================*/
+// Paths:
 
 var path = {
     dist: {
@@ -36,18 +35,8 @@ var path = {
     clean: "dist"
 };
 
-/* Webserver config
-=========================*/
+// Tasks:
 
-var config = {
-    server: "dist/",
-    notify: false,
-    open: true,
-    ui: false
-};
-
-/* Tasks
-=========================*/
 gulp.task("html:build", () => {
     return gulp.src(path.src.html)
     // .pipe(plumber())
@@ -66,7 +55,6 @@ gulp.task("css:build", () => {
     //     browsers: ["last 5 versions"],
     //     cascade: true
     // }))
-    .pipe(removeComments())
     // .pipe(cssbeautify())
     .pipe(gulp.dest(path.dist.css))
     // .pipe(cssnano({
@@ -75,6 +63,7 @@ gulp.task("css:build", () => {
     //         removeAll: true
     //     }
     // }))
+    .pipe(removeComments())
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
@@ -89,7 +78,7 @@ gulp.task("js:build", () => {
     .pipe(gulp.dest(path.dist.js))
     .pipe(uglify())
     .pipe(removeComments())
-    .pipe(rename("main.min.js"))
+    .pipe(rename("bundle.js"))
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.reload({
         stream: true
@@ -125,7 +114,9 @@ gulp.task("build", ["clean"], () => {
 });
 
 gulp.task("browser-sync", () => {
-    browserSync(config);
+    browserSync.init({
+        server: "./dist"
+    });
 });
 
 gulp.task("watch", () => {
