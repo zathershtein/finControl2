@@ -1,8 +1,8 @@
 {
-  "name": "finControl2",
+  "name": "fincontrol2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/js/bundle.js",
   "scripts": {
     "start": "gulp"
   },
@@ -21,6 +21,14 @@
     "bootstrap": "^4.1.3"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-strip-css-comments": "^2.0.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "rimraf": "^2.6.2"
   }
 }
